@@ -1,0 +1,158 @@
+/* Shared site styles — Vibrant Horizon (see vibrant_horizon/DESIGN.md) */
+
+:root {
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-on-surface: #1c1b1b;
+  --color-accent-orange: #f57c00;
+  --motion-fast: 200ms;
+  --motion-ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Glassmorphism surface (nav overlays, filter panels, badges) */
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Button base */
+.btn {
+  cursor: pointer;
+  border: none;
+  transition:
+    background-color var(--motion-fast) var(--motion-ease),
+    color var(--motion-fast) var(--motion-ease),
+    box-shadow var(--motion-fast) var(--motion-ease),
+    transform var(--motion-fast) var(--motion-ease),
+    border-color var(--motion-fast) var(--motion-ease);
+}
+
+.btn:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--color-error) 40%, transparent);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Primary — Accent Red → orange on hover */
+.btn-primary {
+  background: var(--color-error);
+  color: var(--color-on-error);
+}
+
+.btn-primary:hover {
+  background: var(--color-accent-orange);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--color-accent-orange) 25%, transparent);
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+/* Secondary — white fill, red border */
+.btn-secondary {
+  background: #fff;
+  color: var(--color-error);
+  border: 1.5px solid var(--color-error);
+}
+
+.btn-secondary:hover {
+  background: #fff;
+  border-color: var(--color-error);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--color-error) 12%, transparent);
+}
+
+.btn-secondary:active {
+  transform: scale(0.97);
+}
+
+/* Ghost — glass over imagery */
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--color-on-surface);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.btn-ghost:active {
+  transform: scale(0.97);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+
+  .btn-primary:active,
+  .btn-secondary:active,
+  .btn-ghost:active {
+    transform: none;
+  }
+}
+
+/* Global pointer effect — red silk thread */
+.cursor-thread {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: 100;
+  transform: translate3d(-50%, -50%, 0);
+  opacity: 0;
+  background: radial-gradient(circle at 30% 30%, #ff9c9c 0%, #e12929 45%, #9a0f0f 100%);
+  box-shadow:
+    0 0 8px rgba(186, 26, 26, 0.35),
+    0 0 20px rgba(186, 26, 26, 0.2);
+  transition: opacity 180ms ease;
+  will-change: transform, opacity;
+}
+
+.cursor-thread-segment {
+  position: fixed;
+  width: 10px;
+  height: 4px;
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: 99;
+  transform-origin: left center;
+  opacity: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(186, 26, 26, 0.95) 0%,
+    rgba(186, 26, 26, 0.7) 70%,
+    rgba(186, 26, 26, 0) 100%
+  );
+  filter: blur(0.35px);
+  transition: opacity 180ms ease;
+  will-change: transform, opacity;
+}
+
+.cursor-thread.is-active,
+.cursor-thread-segment.is-active {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .cursor-thread,
+  .cursor-thread-segment {
+    display: none;
+  }
+}
+
+@media (pointer: fine) {
+  body.custom-cursor-active,
+  body.custom-cursor-active * {
+    cursor: none !important;
+  }
+}

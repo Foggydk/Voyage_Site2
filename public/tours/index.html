@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Вояж-Тур | Поиск туров</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/site.css" rel="stylesheet"/>
+
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#747878",
+                    "on-primary-container": "#747676",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#1a1c1c",
+                    "surface-container-highest": "#e5e2e1",
+                    "primary-fixed": "#e2e2e2",
+                    "secondary-fixed": "#e4e2e2",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "tertiary-fixed": "#e2e2e2",
+                    "surface-container-low": "#f6f3f2",
+                    "secondary-container": "#e4e2e2",
+                    "secondary": "#5e5e5e",
+                    "surface-variant": "#e5e2e1",
+                    "surface-container": "#f1edec",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#5d5f5f",
+                    "surface-tint": "#5d5f5f",
+                    "inverse-on-surface": "#f4f0ef",
+                    "secondary-fixed-dim": "#c8c6c6",
+                    "primary-fixed-dim": "#c6c6c7",
+                    "outline-variant": "#c4c7c8",
+                    "background": "#fcf8f8",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#ffffff",
+                    "inverse-primary": "#c6c6c7",
+                    "inverse-surface": "#313030",
+                    "surface-bright": "#fcf8f8",
+                    "surface-container-high": "#ebe7e7",
+                    "on-tertiary-container": "#747676",
+                    "tertiary": "#5d5f5f",
+                    "surface": "#fcf8f8",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-background": "#1c1b1b",
+                    "on-surface-variant": "#444748",
+                    "on-primary-fixed-variant": "#454747",
+                    "surface-dim": "#ddd9d9",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#474747",
+                    "on-surface": "#1c1b1b",
+                    "on-secondary-container": "#646464",
+                    "accent-orange": "#F57C00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "80px",
+                    "xs": "4px",
+                    "md": "24px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "16px",
+                    "sm": "12px",
+                    "lg": "48px",
+                    "base": "8px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "caption": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "display-lg-mobile": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #e5e2e1; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md border-b border-outline-variant/10 shadow-sm">
+<div class="flex justify-between items-center px-margin-desktop py-base max-w-[1440px] mx-auto">
+<a class="font-headline-md text-headline-md text-error font-extrabold flex items-center gap-2 hover:opacity-90 transition-opacity" href="../tours/">
+<span class="material-symbols-outlined text-[32px]">travel_explore</span>
+<span>Вояж-Тур</span>
+</a>
+<nav class="hidden md:flex items-center gap-md font-body-md text-body-md">
+<a class="text-error border-b-2 border-error pb-1" href="../tours/" aria-current="page">Туры</a>
+<a class="text-on-surface-variant hover:text-error transition-colors" href="../treatment/">Лечение</a>
+<a class="text-on-surface-variant hover:text-error transition-colors" href="../destinations/">Направления</a>
+<a class="text-on-surface-variant hover:text-error transition-colors" href="../about/">О компании</a>
+</nav>
+<div class="flex items-center gap-sm">
+<button class="material-symbols-outlined text-on-surface-variant p-2 hover:bg-surface-container-high rounded-full transition-colors">search</button>
+<a class="btn btn-primary px-md py-base rounded-lg font-label-md" href="../account/">Личный кабинет</a>
+</div>
+</div>
+</header>
+<main class="pt-[100px] pb-xl px-margin-desktop max-w-[1440px] mx-auto">
+<!-- Page Title & Header Section -->
+<div class="mb-lg flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h1 class="font-display-lg text-display-lg mb-xs">Поиск туров</h1>
+<p class="font-body-lg text-on-surface-variant">Откройте для себя лучшие предложения для вашего идеального отдыха</p>
+</div>
+<!-- Sorting Buttons -->
+<div class="flex items-center gap-sm bg-surface-container-low p-1.5 rounded-xl border border-outline-variant/20">
+<button class="px-md py-2 rounded-lg bg-surface-container-highest text-on-surface font-label-md transition-all">По популярности</button>
+<button class="px-md py-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant font-label-md transition-all">По цене</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Sidebar Filters -->
+<aside class="md:col-span-3">
+<div class="glass-card p-md rounded-xl sticky top-[100px]">
+<h3 class="font-headline-md text-headline-md mb-md flex items-center gap-2">
+<span class="material-symbols-outlined text-error">filter_list</span>
+                        Фильтры
+                    </h3>
+<!-- Destination -->
+<div class="mb-md">
+<span class="font-label-md block mb-sm text-on-surface-variant">Направления</span>
+<div class="flex flex-col gap-sm">
+<label class="flex items-center gap-sm cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded border-outline-variant text-error focus:ring-error transition-all" type="checkbox"/>
+<span class="font-body-md group-hover:text-error">Китай</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-error focus:ring-error transition-all" type="checkbox"/>
+<span class="font-body-md group-hover:text-error">Россия</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-error focus:ring-error transition-all" type="checkbox"/>
+<span class="font-body-md group-hover:text-error">Турция</span>
+</label>
+</div>
+</div>
+<div class="h-px bg-outline-variant/30 my-md"></div>
+<!-- Vacation Type -->
+<div class="mb-md">
+<span class="font-label-md block mb-sm text-on-surface-variant">Тип отдыха</span>
+<div class="flex flex-wrap gap-xs">
+<button class="px-sm py-1 rounded-full bg-error text-on-primary font-caption">Пляжный</button>
+<button class="px-sm py-1 rounded-full bg-surface-container-high text-on-surface-variant font-caption hover:bg-outline-variant/40">Экскурсионный</button>
+<button class="px-sm py-1 rounded-full bg-surface-container-high text-on-surface-variant font-caption hover:bg-outline-variant/40">Лечебный</button>
+</div>
+</div>
+<div class="h-px bg-outline-variant/30 my-md"></div>
+<!-- Price Range -->
+<div class="mb-md">
+<span class="font-label-md block mb-sm text-on-surface-variant">Ценовой диапазон</span>
+<div class="flex items-center gap-sm mb-sm">
+<input class="w-full bg-surface border border-outline-variant rounded-lg p-2 font-body-md focus:ring-2 focus:ring-error/20 outline-none" placeholder="От" type="text"/>
+<input class="w-full bg-surface border border-outline-variant rounded-lg p-2 font-body-md focus:ring-2 focus:ring-error/20 outline-none" placeholder="До" type="text"/>
+</div>
+<input class="w-full accent-error h-1.5 rounded-full cursor-pointer" type="range"/>
+</div>
+<div class="h-px bg-outline-variant/30 my-md"></div>
+<!-- Dates -->
+<div class="mb-lg">
+<span class="font-label-md block mb-sm text-on-surface-variant">Даты поездки</span>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">calendar_today</span>
+<input class="w-full bg-surface border border-outline-variant rounded-lg p-2 pl-10 font-body-md focus:ring-2 focus:ring-error/20 outline-none cursor-pointer" type="text" value="12 Дек — 24 Дек"/>
+</div>
+</div>
+<button class="btn btn-primary w-full py-sm rounded-lg font-label-md shadow-md">Применить</button>
+<button class="w-full mt-sm text-on-surface-variant font-caption hover:text-error transition-colors">Сбросить все</button>
+</div>
+</aside>
+<!-- Tours Grid -->
+<section class="md:col-span-9">
+<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+<div class="relative h-[240px] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A luxurious tropical resort in Sanya, China, featuring crystal clear turquoise waters, white sandy beaches, and modern architecture. The scene is bathed in golden hour sunlight, creating a warm, vibrant atmosphere. High-end glassmorphic UI elements are hinted at in the image's composition, representing a premium travel experience with an energetic and adventurous mood." src="C:\Users\dkeyd\OneDrive\Desktop\Voyage_Site1\public\assets\img\1.jpg"/>
+<div class="absolute top-4 left-4 bg-accent-orange text-on-primary px-sm py-1 rounded-full font-label-md shadow-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                Хит продаж
+                            </div>
+<div class="absolute bottom-4 right-4 bg-surface/80 backdrop-blur-md px-sm py-1 rounded-lg border border-white/20">
+<span class="font-label-md text-error">4.9</span>
+</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md mb-xs text-on-surface group-hover:text-error transition-colors">Райский Хайнань</h3>
+<div class="flex items-center gap-sm text-on-surface-variant mb-md">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-caption">10 ночей</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">hotel</span>
+<span class="font-caption">5* Deluxe</span>
+</div>
+</div>
+<div class="mt-auto pt-md border-t border-outline-variant/20 flex items-center justify-between">
+<div>
+<span class="font-caption text-on-surface-variant block">Стоимость от</span>
+<span class="font-headline-md text-on-surface">124 500 ₽</span>
+</div>
+<button class="btn btn-primary p-3 rounded-lg">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+<div class="relative h-[240px] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Breathtaking landscape of the Great Wall of China snaking over misty green mountains under a dramatic sunset sky. The lighting is rich with deep oranges and purples, reflecting an adventurous and majestic mood. The image maintains a clean, professional aesthetic suitable for a high-end travel website with a white background and minimalist styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBVe3K1e9hYpci_nY0_72z_w2Kag16K4n5ph1QtCi9cX2kRG8TzHXF7YTxKLoMgo1rWGWI5Y1R4n-Vxi_4TktopGigquUlrWT4nbUUAEp_j1_Dw5sX2RGdEwnHqc8dGs1lPPDgvKjXr9J4_EGbQEOHyXmSVHxlyqKMd6ARTjZrNjqXlmvDxvreU0L-9gK9bpwyeix0Buw-CHqKsun0VG6nR9aYRUPT3CP2hfiIUcSf2LBvwD5TPIsUzM2ZC4uDPJa4WdfHuobEFKsb"/>
+<div class="absolute top-4 left-4 bg-accent-orange text-on-primary px-sm py-1 rounded-full font-label-md shadow-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+                                Рекомендуем
+                            </div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md mb-xs text-on-surface group-hover:text-error transition-colors">Великий Китай</h3>
+<div class="flex items-center gap-sm text-on-surface-variant mb-md">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-caption">7 ночей</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">map</span>
+<span class="font-caption">Экскурсии</span>
+</div>
+</div>
+<div class="mt-auto pt-md border-t border-outline-variant/20 flex items-center justify-between">
+<div>
+<span class="font-caption text-on-surface-variant block">Стоимость от</span>
+<span class="font-headline-md text-on-surface">89 900 ₽</span>
+</div>
+<button class="btn btn-primary p-3 rounded-lg">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+<div class="relative h-[240px] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A serene high-end spa resort in Turkey, overlooking the turquoise Mediterranean Sea with white loungers and elegant infinity pools. The lighting is bright and airy, emphasizing a luxurious and relaxing mood. The overall visual style is minimalist and pristine, perfectly aligning with a premium agency's brand identity and clean white UI tokens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK16T4ko0DHOoDyIFpAZE_hzl5M9C8OcEUweVYPk4mIWcg_vCcTnoqryhWuCXfY6EDMS8LkcpXO1oUFps-80-eZ5JQyBb6c6y_M0I8JY7Xp7vyhU0g2yAqEOYpBR9Aowd5xeHiTUnfrWkg49GswmMmRYhF83Nrx6z0O50LhQYxzFafIe4mb57SdVBYZZL7zU_8_mQ5bJkDTSxeETJgfY833-xw2Cy4rpICSaGTwufgk95jx-TORyR8Pi338qyQiSq2PQh2MVNnGTKy"/>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md mb-xs text-on-surface group-hover:text-error transition-colors">Анталия Premium</h3>
+<div class="flex items-center gap-sm text-on-surface-variant mb-md">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-caption">12 ночей</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">restaurant</span>
+<span class="font-caption">Ultra All-In</span>
+</div>
+</div>
+<div class="mt-auto pt-md border-t border-outline-variant/20 flex items-center justify-between">
+<div>
+<span class="font-caption text-on-surface-variant block">Стоимость от</span>
+<span class="font-headline-md text-on-surface">156 000 ₽</span>
+</div>
+<button class="btn btn-primary p-3 rounded-lg">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+<div class="relative h-[240px] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Scenic winter landscape of Baikal Lake in Russia, featuring deep blue cracked ice under a clear bright sky. The lighting is crisp and natural, highlighting the textures of the frozen environment. The scene evokes a sense of pristine beauty and adventure, following a high-quality photography style for a modern travel interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACb71spuvh_bM-xjCyWUMwg7AdXJyCQgDAcH-EAjebp5HeOVMqvnl-nn3mxy9wDWd3lvFGw5PYZce9ybirdRvb5GNlAa-NWX0YAZF3Y4c3IiqO5Uky7xLiV6EV8mmVUVf-khcsaNTNKud4qYUw4sRI9ZWyb8lE5VGL8r44U1a5OXbSNdQYnWWrCLXmZD9Y9EfpoRVUhB9T1slTpaM12ebsvKcoeWj8Byp-s9s8EweL4pIRtPPwB9TvNsLVtn8NacXbmQy173oxLsBe"/>
+<div class="absolute top-4 left-4 bg-accent-orange text-on-primary px-sm py-1 rounded-full font-label-md shadow-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+                                Горящее предложение
+                            </div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md mb-xs text-on-surface group-hover:text-error transition-colors">Зимний Байкал</h3>
+<div class="flex items-center gap-sm text-on-surface-variant mb-md">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-caption">5 ночей</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">ac_unit</span>
+<span class="font-caption">Экстрим</span>
+</div>
+</div>
+<div class="mt-auto pt-md border-t border-outline-variant/20 flex items-center justify-between">
+<div>
+<span class="font-caption text-on-surface-variant block">Стоимость от</span>
+<span class="font-headline-md text-on-surface">54 200 ₽</span>
+</div>
+<button class="btn btn-primary p-3 rounded-lg">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+<div class="relative h-[240px] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Traditional luxury villas on the coast of Turkey at sunset, with warm golden light reflecting off the stone walls and sea. The mood is peaceful and high-end, focusing on architectural beauty and natural surroundings. The visual aesthetic is clean and sophisticated, suitable for a premium boutique agency website." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV7TVOK5WomPmas7fJr-kMLm9ojrXiUL-_tZspi2uV6d8fcu_f49O2fDdruxNsThgfqUwdl2Ezb5PRCAuIj-WiNi-j-IWDTzTDCPwyTu1vponmjwOtFHcNaVEmKRms3gUT_l7MhtiLh1HvsS6piouMa_PJoJefRStfJj9pzyWkj6EihxXClR2lK4Rb8xwfz7jXVSdgvMxICQ2IzJlXVn3DH8PLaF2W4-f43nbXiZSObC2MXEzb22zHKbgs3-UJ8DACOT6YgKL4svnU"/>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md mb-xs text-on-surface group-hover:text-error transition-colors">Бодрум Резорт</h3>
+<div class="flex items-center gap-sm text-on-surface-variant mb-md">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-caption">14 ночей</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">villa</span>
+<span class="font-caption">Вилла</span>
+</div>
+</div>
+<div class="mt-auto pt-md border-t border-outline-variant/20 flex items-center justify-between">
+<div>
+<span class="font-caption text-on-surface-variant block">Стоимость от</span>
+<span class="font-headline-md text-on-surface">210 000 ₽</span>
+</div>
+<button class="btn btn-primary p-3 rounded-lg">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+<div class="relative h-[240px] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Vibrant cityscape of Shanghai by night, with neon lights reflecting in the river and futuristic skyscrapers towering above. The style is energetic and modern, using a cool blue and sharp red color palette to convey a sense of technological advancement and excitement. Professional photography lighting adds a premium glossy finish." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz7YUNgwNanzxnDr6Rj8TKpRw5PjIfBttdX-iyrytU31Nrrj13BOXl0gczYJ5ddeQjcp8m_NFMeBVUB1C2MkK6gsYPX6qM4Wj_S3Gi4Yj-X8dpuLhJbXsU5ktnrPY_lKggLoWXToqquk5kcGWBUob6fR618Y7rgwXsdFOIt63xNEe-66VV9eGIceE00friLENJAwtiQhpcYzwqbF2SgnxCiGLTlak_d74ONrf9T_niG8R9WtfNSakHSUE_U61fHFaFFSvk_5K6VIJ3"/>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md mb-xs text-on-surface group-hover:text-error transition-colors">Огни Шанхая</h3>
+<div class="flex items-center gap-sm text-on-surface-variant mb-md">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-caption">6 ночей</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">apartment</span>
+<span class="font-caption">Сити-тур</span>
+</div>
+</div>
+<div class="mt-auto pt-md border-t border-outline-variant/20 flex items-center justify-between">
+<div>
+<span class="font-caption text-on-surface-variant block">Стоимость от</span>
+<span class="font-headline-md text-on-surface">78 400 ₽</span>
+</div>
+<button class="btn btn-primary p-3 rounded-lg">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-lg flex justify-center gap-sm">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant/30 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-error text-on-primary font-label-md">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant/30 hover:bg-surface-container-high transition-colors font-label-md">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant/30 hover:bg-surface-container-high transition-colors font-label-md">3</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant/30 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-surface-container-lowest w-full">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-lg max-w-[1440px] mx-auto">
+<div class="flex flex-col gap-md">
+<a class="font-headline-md text-headline-md text-error dark:text-error-container font-extrabold tracking-tight hover:opacity-90 transition-opacity" href="../tours/">Вояж-Тур</a>
+<p class="font-caption text-on-surface-variant">Ваш надежный гид в мире незабываемых путешествий и профессионального отдыха.</p>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface mb-md">Меню</h4>
+<ul class="flex flex-col gap-sm">
+<li><a class="font-caption text-on-surface-variant hover:text-error hover:underline decoration-error" href="../tours/">Туры</a></li>
+<li><a class="font-caption text-on-surface-variant hover:text-error hover:underline decoration-error" href="../treatment/">Лечение</a></li>
+<li><a class="font-caption text-on-surface-variant hover:text-error hover:underline decoration-error" href="../destinations/">Направления</a></li>
+<li><a class="font-caption text-on-surface-variant hover:text-error hover:underline decoration-error" href="../about/">О компании</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface mb-md">Поддержка</h4>
+<ul class="flex flex-col gap-sm">
+<li><a class="font-caption text-on-surface-variant hover:text-error hover:underline decoration-error" href="../contacts/">Контакты</a></li>
+<li><a class="font-caption text-on-surface-variant hover:text-error hover:underline decoration-error" href="../privacy/">Политика конфиденциальности</a></li>
+<li><a class="font-caption text-on-surface-variant hover:text-error hover:underline decoration-error" href="../faq/">Часто задаваемые вопросы</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface mb-md">Контакты</h4>
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-error">phone</span>
+<span class="font-caption text-on-surface-variant">8 (800) 555-35-35</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-error">mail</span>
+<span class="font-caption text-on-surface-variant">info@voyage-tour.ru</span>
+</div>
+<div class="flex gap-sm mt-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-error hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-error hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="px-margin-desktop py-md border-t border-outline-variant/10 text-center">
+<p class="font-caption text-on-surface-variant opacity-70">© 2026 Вояж-Тур. Все права защищены.</p>
+</div>
+</footer>
+<script>
+        // Simple Interaction logic for filters
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const tourCards = document.querySelectorAll('section > div > div');
+                tourCards.forEach(card => {
+                    card.style.opacity = '0.5';
+                    setTimeout(() => card.style.opacity = '1', 300);
+                });
+            });
+        });
+
+        // Sticky Header Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+<script src="../assets/js/cursor-glow.js"></script>
+</body></html>

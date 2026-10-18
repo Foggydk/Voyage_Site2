@@ -1,0 +1,18 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+*.user
+*.vsidx
+
+# Firebase
+.firebase/
+
+# Node
+node_modules/
+
+# Пользовательские данные
+users.json
+# Секреты
+.env
+*.log

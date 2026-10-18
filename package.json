@@ -1,0 +1,10 @@
+{
+  "name": "voyage-tour",
+  "private": true,
+  "description": "Вояж-Тур — статический многостраничный сайт (Firebase Hosting)",
+  "scripts": {
+    "start": "npx --yes serve public",
+    "emulate": "firebase emulators:start --only hosting",
+    "deploy": "firebase deploy --only hosting"
+  }
+}

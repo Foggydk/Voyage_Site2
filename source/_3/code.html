@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>О компании | Вояж-Тур</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .text-gradient-error {
+            background: linear-gradient(135deg, #ba1a1a 0%, #ff5449 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#747878",
+                        "on-primary-container": "#747676",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#1a1c1c",
+                        "surface-container-highest": "#e5e2e1",
+                        "primary-fixed": "#e2e2e2",
+                        "secondary-fixed": "#e4e2e2",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-low": "#f6f3f2",
+                        "secondary-container": "#e4e2e2",
+                        "secondary": "#5e5e5e",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container": "#f1edec",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#5d5f5f",
+                        "surface-tint": "#5d5f5f",
+                        "inverse-on-surface": "#f4f0ef",
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "outline-variant": "#c4c7c8",
+                        "background": "#fcf8f8",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#ffffff",
+                        "inverse-primary": "#c6c6c7",
+                        "inverse-surface": "#313030",
+                        "surface-bright": "#fcf8f8",
+                        "surface-container-high": "#ebe7e7",
+                        "on-tertiary-container": "#747676",
+                        "tertiary": "#5d5f5f",
+                        "surface": "#fcf8f8",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-background": "#1c1b1b",
+                        "on-surface-variant": "#444748",
+                        "on-primary-fixed-variant": "#454747",
+                        "surface-dim": "#ddd9d9",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-surface": "#1c1b1b",
+                        "on-secondary-container": "#646464"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "80px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px",
+                        "sm": "12px",
+                        "lg": "48px",
+                        "base": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "caption": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/10 shadow-sm">
+<nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-base max-w-[1440px] mx-auto">
+<div class="flex items-center gap-base">
+<span class="font-headline-md text-headline-md text-error font-extrabold">Вояж-Тур</span>
+</div>
+<!-- Desktop Links -->
+<div class="hidden md:flex gap-gutter items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-error transition-colors" href="#">Туры</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-error transition-colors" href="#">Лечение</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-error transition-colors" href="#">Направления</a>
+<a class="font-body-md text-body-md text-error border-b-2 border-error pb-1" href="#">О компании</a>
+</div>
+<div class="flex items-center gap-md">
+<button class="hidden md:flex items-center gap-xs text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="bg-error text-on-primary px-md py-base rounded-lg font-label-md active:scale-95 transition-transform hover:opacity-90">
+                    Личный кабинет
+                </button>
+</div>
+</nav>
+</header>
+<main class="pt-xl">
+<!-- Hero Section: History & Mission -->
+<section class="relative min-h-[716px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A serene landscape of a luxury alpine lake resort during sunset, with soft orange and warm red light reflecting off the water. The atmosphere is professional yet adventurous, conveying a high-end travel experience. The composition is wide and cinematic, emphasizing the vastness and beauty of premium global destinations that align with the brand's sophisticated wanderlust identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb_3_j_mzpbIsVDmW7vD8ThSxkeBvOoMI8kwvGw4wfviFPCw-gNO8TGymGhclJ9gZmTtyGPnS1DLeH0V83CTR--R43N6cYJBbj8TBeFiXWCJQyPXxP5g-YebKnvuwMnTXGzB6--msQZS8assY0-wwLkxXuHqniRELvDzyebAu49NNZ4C_HekvS5_YwxaWQXaNB2H9iVoPHiFRJrpJiCYHI5h1SRXkyBKfVe9lTihmsjTDEoew7NL0KF-7d0b9kIUhkGVPrJjeW2Opn"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/60 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop w-full grid grid-cols-1 md:grid-cols-2 gap-lg items-center">
+<div class="space-y-md" data-aos="fade-right">
+<div class="inline-flex items-center gap-xs px-md py-xs bg-error/10 text-error rounded-full border border-error/20">
+<span class="material-symbols-outlined text-[18px]" data-icon="history">history</span>
+<span class="font-label-md text-label-md">С 2008 года на рынке</span>
+</div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">Создаем путешествия, которые <span class="text-error">меняют жизнь</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">Мы верим, что путешествие — это не просто маршрут, а глубокий личный опыт. Наша миссия — обеспечить безупречный комфорт и безопасность в любой точке мира.</p>
+<div class="flex gap-md pt-base">
+<div class="flex flex-col">
+<span class="font-headline-lg text-headline-lg text-error">15+</span>
+<span class="font-caption text-caption uppercase tracking-wider text-on-surface-variant">Лет опыта</span>
+</div>
+<div class="w-px h-lg bg-outline-variant"></div>
+<div class="flex flex-col">
+<span class="font-headline-lg text-headline-lg text-error">50k+</span>
+<span class="font-caption text-caption uppercase tracking-wider text-on-surface-variant">Клиентов</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid: Values & Facts -->
+<section class="py-xl bg-surface-container-low">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Наши ценности в цифрах</h2>
+<p class="text-on-surface-variant mt-base">Почему нам доверяют тысячи путешественников по всей стране</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter h-auto md:h-[500px]">
+<!-- Large Card: Trust -->
+<div class="md:col-span-2 md:row-span-2 glass-card rounded-xl p-lg flex flex-col justify-between group overflow-hidden relative">
+<div class="relative z-10">
+<div class="w-12 h-12 bg-error rounded-lg flex items-center justify-center mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-primary" data-icon="verified_user">verified_user</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-base">Безупречная надежность</h3>
+<p class="text-on-surface-variant font-body-lg">За 15 лет мы не просто пережили все кризисы отрасли, а стали сильнее. 98% наших клиентов рекомендуют нас друзьям.</p>
+</div>
+<div class="mt-lg relative z-10">
+<div class="text-display-lg text-error font-extrabold opacity-20 absolute -bottom-8 -right-4">98%</div>
+</div>
+<div class="absolute inset-0 bg-gradient-to-br from-error/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<!-- Medium Card: Awards -->
+<div class="md:col-span-2 glass-card rounded-xl p-md flex items-center gap-md group">
+<div class="w-16 h-16 bg-surface-container-highest rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-error text-[32px]" data-icon="workspace_premium" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-error uppercase">Награда 2023</h4>
+<p class="font-headline-md text-headline-md">Лучшее агентство года</p>
+</div>
+</div>
+<!-- Small Card: Support -->
+<div class="glass-card rounded-xl p-md group">
+<span class="material-symbols-outlined text-error mb-base" data-icon="support_agent">support_agent</span>
+<h4 class="font-label-md text-label-md mb-xs">Поддержка 24/7</h4>
+<p class="text-caption text-on-surface-variant">Всегда на связи в любой точке мира через мессенджеры.</p>
+</div>
+<!-- Small Card: Destinations -->
+<div class="glass-card rounded-xl p-md group">
+<span class="material-symbols-outlined text-error mb-base" data-icon="explore">explore</span>
+<h4 class="font-label-md text-label-md mb-xs">120+ Стран</h4>
+<p class="text-caption text-on-surface-variant">От уютных санаториев до экзотических экспедиций.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Team: Asymmetric Layout -->
+<section class="py-xl">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-lg gap-md">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Команда «Вояж-Тур»</h2>
+<p class="text-on-surface-variant mt-base font-body-lg">Эксперты, которые превращают ваши мечты в идеальные маршруты. Каждый из нас — влюбленный в свое дело путешественник.</p>
+</div>
+<button class="flex items-center gap-xs text-error font-label-md hover:underline">
+                        Вся команда <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Team Member 1 -->
+<div class="space-y-md group">
+<div class="aspect-[4/5] rounded-xl overflow-hidden relative shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional portrait of a female travel executive in a modern, sun-lit office with a minimalist aesthetic. She is wearing a smart-casual outfit in neutral tones. The background features subtle travel-related decor and warm lighting. The image captures a friendly, trust-inspiring, and confident leader within a boutique travel agency setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApMRZXXrLQihsYQOXLM7zN7gUU6MfU2NhW9lfHzecAvSq9Xd8cISrYbebRvUF-WdkZ6WmQJWE-zq_MZaV9aoWem8Hj4IswrvbJ5X473KgK4CMCEnZJkfKb8h9lZFucwCmb0VMRplSzr-LP3TwvqWSXe-gvYP01rhZlFs4nM3FcnIw9DVgzsOr2_8kEqSl8vZoonkQHBeZGSNbecAIMabTwEmaTqBd4KroNHoBd_wOiWu0tAi1gxS0CMRSVfHkEctpH0JpAnog4vU68"/>
+<div class="absolute bottom-4 left-4 right-4 glass-card p-base rounded-lg translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
+<p class="text-caption italic">«Моя цель — открыть для вас мир без границ и забот»</p>
+</div>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md">Елена Соколова</h3>
+<p class="text-error font-label-md">Основатель и CEO</p>
+</div>
+</div>
+<!-- Team Member 2 -->
+<div class="space-y-md group md:mt-12">
+<div class="aspect-[4/5] rounded-xl overflow-hidden relative shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional portrait of a male travel consultant in a bright, modern studio environment. He has a warm, friendly smile and is dressed in a professional blue shirt. The lighting is clean and high-key, aligning with the brand's trustworthy and approachable personality. The background is slightly blurred with a clean, light-mode design feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDvo4jguB-XFpjr-AI6L2xygzq0lJlSOfXZ-mUQjBhKznJI0EG5Pr0FY61QIR0vHuP0qxLYfu-IuCoUkqHJ5yrSLrUGFN16oiV5STpKAKPdlv-MjlLbUE3nlMKzd6OjrmGFzlVKkEj43D0UkmWzCbRFYIMfrleFDQgw6fhB6XNhzRHhNRSZpwFqsQEAqLoVrw8UqOeu-Yf933JTTkBVIDNgIjv7KS8Q0MLpJIhJg8KnZwCVjDY_vuYApgCfm3TfwPCnizciW9-hYRS"/>
+<div class="absolute bottom-4 left-4 right-4 glass-card p-base rounded-lg translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
+<p class="text-caption italic">«Лучший отдых — это когда вы ни о чем не думаете»</p>
+</div>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md">Дмитрий Волков</h3>
+<p class="text-error font-label-md">Руководитель VIP-отдела</p>
+</div>
+</div>
+<!-- Team Member 3 -->
+<div class="space-y-md group">
+<div class="aspect-[4/5] rounded-xl overflow-hidden relative shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up professional portrait of a young female travel expert with a vibrant and energetic expression. She is in a creative office space with pops of orange and red accents. The lighting is natural and soft, creating a modern and premium feel. Her style reflects the adventurous yet meticulous personality of the agency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlofim73iGYBQ7Abl913ZiZmczo7G6LnSbKVn1EuGB24UdnMcu-IhQPX--pn_VNPevCkY8yTUoPjSLTN4lmJmhY32hYPWb74e0P1uAY3RXNVRVlIKy4YzIyJyrrlGLhM6qAhq7pgILNni1_iL2hJLbikZT1Tv7tHvFrJY06qxla3aHf4LhLUMk7dLtFcauI7p4XvI-MEnrU0uGx4gUjt5VCH3pxzXfMLB24l1ld3ygkk-B4iRPmr6KuQvb4JNvZynzWGhX02POpezX"/>
+<div class="absolute bottom-4 left-4 right-4 glass-card p-base rounded-lg translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
+<p class="text-caption italic">«Ищу жемчужины среди отелей по всему свету»</p>
+</div>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md">Мария Козлова</h3>
+<p class="text-error font-label-md">Эксперт по направлениям</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-xl bg-surface-container-highest/30">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-lg">
+<span class="font-label-md text-error">Отзывы</span>
+<h2 class="font-headline-lg text-headline-lg mt-xs">Что о нас говорят клиенты</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bg-surface rounded-xl p-lg shadow-sm border border-outline-variant/20 relative">
+<span class="material-symbols-outlined text-[64px] text-error/10 absolute top-4 right-4" data-icon="format_quote">format_quote</span>
+<div class="flex gap-xs text-error mb-md">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-on-surface mb-lg italic">«Уже 5 лет летаем только с Вояж-Тур. Всегда подберут лучший вариант, даже если бюджет ограничен. Отдельное спасибо Дмитрию за организацию нашей свадьбы на Мальдивах!»</p>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest overflow-hidden">
+<img data-alt="Small circular avatar of a happy female customer smiling, professional photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy1foLSIbkt8k2E2mkImhflPBqGaCgcsAcUc8gkUHf_eMxq_uKEJJjEHKU5bGwUE-sT_8rdmK_q9lmFW1kQWaQCbJruCWnOWy1x12lFlggakfgAPoU7m-gUP6izhFg0qJNHx2bT3lBEEYEh0XDZdpDujrBpGDc9zUCuQ4nGQjYdLU8czVyKtbZj0ckGAiP0DOxs_8lTjY3YFTlYcXeh2zRnuovZyTvBctbVoUmJC7ut2EZUTvTT_ufivCm12nhIpVxwzlyya__R1Xk"/>
+</div>
+<div>
+<h4 class="font-label-md">Анна К.</h4>
+<p class="text-caption text-on-surface-variant">Постоянный клиент</p>
+</div>
+</div>
+</div>
+<div class="bg-surface rounded-xl p-lg shadow-sm border border-outline-variant/20 relative">
+<span class="material-symbols-outlined text-[64px] text-error/10 absolute top-4 right-4" data-icon="format_quote">format_quote</span>
+<div class="flex gap-xs text-error mb-md">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-on-surface mb-lg italic">«Профессионализм на высшем уровне. В этом году из-за отмены рейса застряли в аэропорту, поддержка Вояж-Тур решила вопрос за 15 минут — перебронировали билеты и отель. Респект!»</p>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest overflow-hidden">
+<img data-alt="Small circular avatar of a satisfied male customer, corporate professional style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkwaNb5fYzXC087ls7glhNKMwxyDbuRt3zOkjWmRvUQuJPYHH4heLFypwfoqfLcs1MottFxbcK1BG4yktaytWpAp1xAHOVqf9-fjExES0UZNDwoyZzxZpyp_-hvZDFQ4Igq_sD3VSTWw8XATG72hVORxce47dHXGmS9oG7Yg-qkJuMsyZVWDnL-2s88mFQMkr_qp8ZfxbLnbdX7MSBUIKsvpJpQ8xrJWMgiABubsA1gO2Ixhm7U8NOPq_7zwrbxa7X8nHLPLNxSono"/>
+</div>
+<div>
+<h4 class="font-label-md">Сергей П.</h4>
+<p class="text-caption text-on-surface-variant">Бизнес-путешественник</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contacts & Map -->
+<section class="py-xl">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-lg items-center">
+<div class="space-y-lg">
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-on-surface">Всегда рады <br/><span class="text-error">видеть вас у нас</span></h2>
+<div class="space-y-md">
+<div class="flex items-start gap-md">
+<div class="w-10 h-10 rounded-full bg-error/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-error" data-icon="location_on">location_on</span>
+</div>
+<div>
+<h4 class="font-label-md">Главный офис</h4>
+<p class="text-on-surface-variant">Москва, ул. Пушкина, д. 10, оф. 405</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<div class="w-10 h-10 rounded-full bg-error/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-error" data-icon="phone">phone</span>
+</div>
+<div>
+<h4 class="font-label-md">Телефон</h4>
+<p class="text-on-surface-variant">8 (800) 555-35-35</p>
+<p class="text-caption text-on-surface-variant">Ежедневно с 09:00 до 21:00</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<div class="w-10 h-10 rounded-full bg-error/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-error" data-icon="mail">mail</span>
+</div>
+<div>
+<h4 class="font-label-md">Email</h4>
+<p class="text-on-surface-variant">info@voyage-tour.ru</p>
+</div>
+</div>
+</div>
+<div class="p-md bg-surface-container-low rounded-xl border border-outline-variant/30">
+<h4 class="font-label-md mb-base">Реквизиты</h4>
+<div class="grid grid-cols-2 gap-md text-caption">
+<div>
+<span class="text-on-surface-variant block">ИНН:</span>
+<span class="text-on-surface">7712345678</span>
+</div>
+<div>
+<span class="text-on-surface-variant block">ОГРН:</span>
+<span class="text-on-surface">1087700012345</span>
+</div>
+<div class="col-span-2">
+<span class="text-on-surface-variant block">БИК:</span>
+<span class="text-on-surface">044525225</span>
+</div>
+</div>
+</div>
+</div>
+<div class="h-[500px] rounded-2xl overflow-hidden shadow-lg border border-outline-variant/20 relative group">
+<img class="w-full h-full object-cover filter grayscale-[30%] group-hover:grayscale-0 transition-all duration-700" data-alt="A stylized, high-contrast map background showing the central district of a major European city, specifically Moscow. The visual style is minimalist and elegant, using a clean palette of whites, grays, and subtle red accents to highlight the agency's primary location. The lighting is soft and corporate, fitting for a professional travel company's office map view." data-location="Moscow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKgnkpN_URDWzbTiFsOKv-yYoLbwf5BlaAcj-FawuX4Os6XpBx5VcFqiUFOV5SYruCcEJL7Gv0siTjKdMfvs9OB9NqwbSUY4jIYj7MpFIYf2J6eAN-A6H7FbW_8UdXQWg08US3DpJK9fVwYYllKKm53IBxpzy9Jk60DGk9-l2TlsumBFyjUIRBligHGWbFTt52f6nTxedXU2A4xm2GGLlGI8DW_QOKL90_u-ioAEM0W0y-iOBSIrKuNnMRvFpyGskp2VGDbxEBos_F"/>
+<div class="absolute inset-0 bg-error/5 mix-blend-multiply"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<div class="w-8 h-8 bg-error rounded-full flex items-center justify-center animate-ping absolute opacity-50"></div>
+<div class="w-8 h-8 bg-error rounded-full flex items-center justify-center relative shadow-lg">
+<span class="material-symbols-outlined text-on-primary" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-surface-container-lowest w-full">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-lg max-w-[1440px] mx-auto">
+<div class="space-y-md">
+<span class="font-headline-md text-headline-md text-error">Вояж-Тур</span>
+<p class="font-caption text-caption text-on-surface-variant">Профессиональные путешествия с 2008 года. Ваш комфорт — наше вдохновение.</p>
+</div>
+<div class="space-y-md">
+<h4 class="font-label-md text-on-surface">Компания</h4>
+<ul class="space-y-base">
+<li><a class="font-caption text-caption text-on-surface-variant hover:text-error hover:underline decoration-error transition-all" href="#">О компании</a></li>
+<li><a class="font-caption text-caption text-on-surface-variant hover:text-error hover:underline decoration-error transition-all" href="#">Команда</a></li>
+<li><a class="font-caption text-caption text-on-surface-variant hover:text-error hover:underline decoration-error transition-all" href="#">Контакты</a></li>
+</ul>
+</div>
+<div class="space-y-md">
+<h4 class="font-label-md text-on-surface">Направления</h4>
+<ul class="space-y-base">
+<li><a class="font-caption text-caption text-on-surface-variant hover:text-error hover:underline decoration-error transition-all" href="#">Туры</a></li>
+<li><a class="font-caption text-caption text-on-surface-variant hover:text-error hover:underline decoration-error transition-all" href="#">Лечение</a></li>
+<li><a class="font-caption text-caption text-on-surface-variant hover:text-error hover:underline decoration-error transition-all" href="#">Направления</a></li>
+</ul>
+</div>
+<div class="space-y-md">
+<h4 class="font-label-md text-on-surface">Помощь</h4>
+<ul class="space-y-base">
+<li><a class="font-caption text-caption text-on-surface-variant hover:text-error hover:underline decoration-error transition-all" href="#">Политика конфиденциальности</a></li>
+<li><a class="font-caption text-caption text-on-surface-variant hover:text-error hover:underline decoration-error transition-all" href="#">FAQ</a></li>
+</ul>
+<div class="flex gap-md pt-base">
+<a class="w-8 h-8 rounded-full bg-outline-variant/20 flex items-center justify-center hover:bg-error/20 hover:text-error transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="share">share</span>
+</a>
+<a class="w-8 h-8 rounded-full bg-outline-variant/20 flex items-center justify-center hover:bg-error/20 hover:text-error transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="public">public</span>
+</a>
+</div>
+</div>
+</div>
+<div class="px-margin-mobile md:px-margin-desktop py-md border-t border-outline-variant/10 text-center">
+<p class="font-caption text-caption text-on-surface-variant">© 2024 Вояж-Тур. Все права защищены.</p>
+</div>
+</footer>
+<script>
+        // Simple micro-interactions for stat counters
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.glass-card').forEach(card => {
+                observer.observe(card);
+            });
+        });
+
+        // Sticky header behavior
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 50) {
+                header.classList.add('bg-surface/95', 'shadow-md');
+                header.classList.remove('bg-surface/80');
+            } else {
+                header.classList.remove('bg-surface/95', 'shadow-md');
+                header.classList.add('bg-surface/80');
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+<script src="../assets/js/cursor-glow.js"></script>
+</body></html>

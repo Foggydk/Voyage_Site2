@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Направления — Вояж-Тур</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/site.css" rel="stylesheet"/>
+
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.1), rgba(252,248,248,1));
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#747878",
+                        "on-primary-container": "#747676",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#1a1c1c",
+                        "surface-container-highest": "#e5e2e1",
+                        "primary-fixed": "#e2e2e2",
+                        "secondary-fixed": "#e4e2e2",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-low": "#f6f3f2",
+                        "secondary-container": "#e4e2e2",
+                        "secondary": "#5e5e5e",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container": "#f1edec",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#5d5f5f",
+                        "surface-tint": "#5d5f5f",
+                        "inverse-on-surface": "#f4f0ef",
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "outline-variant": "#c4c7c8",
+                        "background": "#fcf8f8",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#ffffff",
+                        "inverse-primary": "#c6c6c7",
+                        "inverse-surface": "#313030",
+                        "surface-bright": "#fcf8f8",
+                        "surface-container-high": "#ebe7e7",
+                        "on-tertiary-container": "#747676",
+                        "tertiary": "#5d5f5f",
+                        "surface": "#fcf8f8",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-background": "#1c1b1b",
+                        "on-surface-variant": "#444748",
+                        "on-primary-fixed-variant": "#454747",
+                        "surface-dim": "#ddd9d9",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-surface": "#1c1b1b",
+                        "on-secondary-container": "#646464"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "80px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px",
+                        "sm": "12px",
+                        "lg": "48px",
+                        "base": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "caption": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-error/20 selection:text-error">
+<!-- Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md border-b border-outline-variant/10 shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-base max-w-[1440px] mx-auto h-16">
+<a class="font-headline-md text-headline-md text-error dark:text-error-container font-extrabold tracking-tight hover:opacity-90 transition-opacity" href="../tours/">Вояж-Тур</a>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-error transition-colors" href="../tours/">Туры</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-error transition-colors" href="../treatment/">Лечение</a>
+<a class="text-error border-b-2 border-error pb-1" href="../destinations/" aria-current="page">Направления</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-error transition-colors" href="../about/">О компании</a>
+</div>
+<div class="flex items-center gap-base">
+<button class="p-base hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+</button>
+<a class="btn btn-primary px-md py-sm rounded-lg font-label-md text-label-md shadow-md" href="../account/">Личный кабинет</a>
+</div>
+</div>
+</nav>
+<main class="pt-16">
+<!-- Hero Section with Map Concept -->
+<section class="relative min-h-[614px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&amp;w=2074&amp;auto=format&amp;fit=crop')] bg-cover bg-center" data-alt="A sprawling panoramic aerial shot of the world at dusk with interconnected glowing light paths representing travel routes. The aesthetic is clean and modern with a focus on high-energy warmth and professional wanderlust. Deep blues of the oceans contrast with warm golden nodes of major cities, all unified under a soft, atmospheric lighting and a premium glassmorphic feel.">
+</div>
+<div class="absolute inset-0 hero-gradient"></div>
+<div class="relative z-10 text-center px-margin-mobile md:max-w-4xl">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-base">Куда отправимся?</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg opacity-80">От уютных улочек Питера до белоснежных песков Мальдив — откройте мир с Вояж-Тур</p>
+<!-- Quick Filter Tabs -->
+<div class="flex flex-wrap justify-center gap-sm">
+<button class="btn btn-primary px-md py-sm rounded-full font-label-md text-label-md flex items-center gap-xs shadow-lg">
+<span class="material-symbols-outlined text-[18px]">public</span> Весь мир
+                    </button>
+<button class="glass-card text-on-surface px-md py-sm rounded-full font-label-md text-label-md flex items-center gap-xs hover:bg-surface transition-colors shadow-sm border border-outline-variant/20">
+<span class="material-symbols-outlined text-[18px]">flag</span> Россия
+                    </button>
+<button class="glass-card text-on-surface px-md py-sm rounded-full font-label-md text-label-md flex items-center gap-xs hover:bg-surface transition-colors shadow-sm border border-outline-variant/20">
+<span class="material-symbols-outlined text-[18px]">temple_buddhist</span> Китай
+                    </button>
+<button class="glass-card text-on-surface px-md py-sm rounded-full font-label-md text-label-md flex items-center gap-xs hover:bg-surface transition-colors shadow-sm border border-outline-variant/20">
+<span class="material-symbols-outlined text-[18px]">beach_access</span> Экзотика
+                    </button>
+</div>
+</div>
+</section>
+<!-- Destination Grid -->
+<section class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-xl">
+<!-- Region: China -->
+<div class="mb-xl">
+<div class="flex items-end justify-between mb-lg">
+<div>
+<span class="text-error font-label-md text-label-md uppercase tracking-widest mb-xs block">Восточная мудрость</span>
+<h2 class="font-headline-lg text-headline-lg">Китай</h2>
+</div>
+<div class="hidden md:block h-[2px] flex-grow mx-lg bg-surface-container-highest mb-3 opacity-30"></div>
+<a class="text-error font-label-md text-label-md flex items-center gap-xs group" href="../tours/">
+                        Все туры в Китай <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Feature Card: Dalian -->
+<div class="md:col-span-7 group relative h-[500px] overflow-hidden rounded-xl shadow-md border border-outline-variant/10">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A futuristic skyline of Dalian city in China at night, reflecting vibrant neon lights on the calm harbor water. The lighting is high-key and colorful with a deep teal and accent red palette. The atmosphere is energetic yet orderly, embodying a blend of historical depth and modern premium travel experiences." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvrWBtdEjemVthh8GsmusSEFcD3_dWrLDZJmZupDafTtoHmP-Fn7lqcRG8CJry2LJzimKOQ1NtfWwBVC6ZbXE7t-1sTte7TNOVe0UYoLEYKHEoSsQYsYf9ENY7M1qseBhqHQbI-midCMO5D4CPFQ-LskYN7KStzlKjrnx4Pikw5ZysGZhWXgGANqdxlrBoncHDX8Hb2ofSBHN4gpoQFkQ71JTK_vlr-IXXXVJXA3PHVkKhnAw_iH4MuDnF34w5_LNLBqt88L-FEeaz"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 p-lg w-full">
+<span class="glass-card text-on-surface px-sm py-xs rounded-full text-caption font-caption mb-md inline-block">Морской курорт</span>
+<h3 class="font-headline-lg text-headline-lg text-white mb-sm">Далянь</h3>
+<p class="text-white/80 font-body-md text-body-md mb-md max-w-lg">Город-сад, где современные небоскребы соседствуют с чистейшими пляжами Желтого моря. Идеален для семейного отдыха и оздоровления.</p>
+<button class="btn btn-primary px-lg py-sm rounded-lg font-label-md text-label-md">Узнать больше</button>
+</div>
+</div>
+<div class="md:col-span-5 grid grid-rows-2 gap-gutter">
+<!-- Card: Beijing -->
+<div class="group relative overflow-hidden rounded-xl shadow-md border border-outline-variant/10">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="The Temple of Heaven in Beijing captured during the golden hour. Warm, amber sunlight bathes the ornate traditional architecture, highlighting the vibrant reds and golds. The shot is minimalist and serene, emphasizing cultural richness and professional photographic quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRtXR0MDoXq8Ap_IEE7UZZ8a5r1GIBbXkgcP0vvwXcReoGxUu25KJ_B-YmPuZ6UzXmOWaRiA_-v2SMI-a8PaCoxAQabkMXJU9y6kFaKFVv_khkychPJ-rjv0qx1EPwp8WUg8VW3RG2-Sjw5HqaWnRejcxfFii6dOOe-YFMSW0pzS8oVPGmDdMG_C3Hjmj4TO4JYxAO05tIgK1_3Z6RcFmktzfS0fJRX5rlg9gySnrxV7iH8SaNlt1dbkVn_4w4Reg8YFNfHG5YF9tH"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
+<div class="absolute inset-0 p-md flex flex-col justify-end">
+<h3 class="font-headline-md text-headline-md text-white">Пекин</h3>
+<p class="text-white/90 text-caption font-caption">Сердце империи и истории</p>
+</div>
+</div>
+<!-- Card: Hainan -->
+<div class="group relative overflow-hidden rounded-xl shadow-md border border-outline-variant/10">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A pristine tropical beach in Hainan with turquoise water and leaning palm trees under a bright midday sun. The visual style is high-clarity and minimalist, focusing on the natural beauty of the white sand and clear skies, creating an inviting and peaceful holiday atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS3bBgaBtqYWpE37IURhs1HThtu28DbuSmE9n-ClEJSdCi1vg-V8nNYz9rs59tWZU9UiB2hMc3_JtKJWYs60iadWNNxHp1I7dSz2tySWn4tsce5qant5MinOskt7mH1cGdWslU_X8_maZeqzpn4RLcZhzQARQbZ5ipQelVYfPnphcw6G_d2MAdjF1YZMSgB5bDqNy52igXKNnWzltPhDbJh0QQAm3WdHowZoPm7os6afQqkd6eKvFW1WP2WY359XQfcMkqI1y-7bqx"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
+<div class="absolute inset-0 p-md flex flex-col justify-end">
+<h3 class="font-headline-md text-headline-md text-white">Хайнань</h3>
+<p class="text-white/90 text-caption font-caption">Китайские Гавайи круглый год</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Region: Russia -->
+<div class="mb-xl">
+<div class="flex items-end justify-between mb-lg">
+<div>
+<span class="text-error font-label-md text-label-md uppercase tracking-widest mb-xs block">Родные просторы</span>
+<h2 class="font-headline-lg text-headline-lg">Россия</h2>
+</div>
+<div class="hidden md:block h-[2px] flex-grow mx-lg bg-surface-container-highest mb-3 opacity-30"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Feature Card: St Petersburg -->
+<div class="group relative h-[400px] overflow-hidden rounded-xl shadow-md border border-outline-variant/10">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="The Church of the Savior on Spilled Blood in Saint Petersburg during a soft summer twilight. The intricate, colorful mosaics of the domes stand out against a pastel purple and blue sky. The scene is atmospheric and romantic, captured with professional precision and elegant lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCuXk7NIPn9PmLhupdckI-9cRlVXHIv1cM35eA8fBkeJuZ0hDnW4ZsLuniHTU12f7c7NtW6ZnPT3YIqgGPb3TpGRbg_N2gGy6_G0Hoow7Bb3M4p0yB0c1BZb1qTQPBt0QQy9b86xdraxmNli5MKX0fFNJuortSO3ZPd58pATcU3-IAhCbU10VW7qbTdzFblYP8zpWnOkt6nGYVA3C6BvuLtl5_FgXmes4cFX38BGL_slhILeGIwfAUApYJzfVud8Tl0m0TVaKBB_4g"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent"></div>
+<div class="absolute inset-y-0 left-0 p-lg w-2/3 flex flex-col justify-center">
+<h3 class="font-headline-md text-headline-md text-white mb-sm">Санкт-Петербург</h3>
+<p class="text-white/80 font-body-md text-body-md mb-md">Белые ночи, разводные мосты и величественная архитектура. Культурное погружение высшей пробы.</p>
+<a class="text-error font-label-md text-label-md flex items-center gap-xs" href="../tours/">Смотреть отели <span class="material-symbols-outlined">chevron_right</span></a>
+</div>
+</div>
+<!-- Feature Card: Altai -->
+<div class="group relative h-[400px] overflow-hidden rounded-xl shadow-md border border-outline-variant/10">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A breathtaking view of the turquoise Katun river winding through the snowy peaks of the Altai mountains. The lighting is crisp and natural, emphasizing the raw, untouched beauty of the landscape. The aesthetic is adventurous and serene, with a minimalist composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBAWdHNa2yoImxym_Doifpxm3Ef-6zrRvbQfHoWnzhR2S9pjGPaMxFGd4xxZyItvcqX5bBtvW5DOcxo_lQ3o_Cp3mBCrj8tX86HwvRJ8qOvdHLe6jcje9jjJkTRVuk-X_oLxZKnPi6K1-l8imZnqYMeRobyi50UYlwPAjbnaT_vZ2RYtboeq6vrX5HvXLnwEHzOVaLo4XzeTVnMy81baMpz-rRy1ReoXxCsM-8F84yR7Nya4_RQ3265VXOQliRrE5n7vBmKwiC1taG"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent"></div>
+<div class="absolute inset-y-0 left-0 p-lg w-2/3 flex flex-col justify-center">
+<h3 class="font-headline-md text-headline-md text-white mb-sm">Алтай</h3>
+<p class="text-white/80 font-body-md text-body-md mb-md">Место силы, где горы касаются неба. Идеально для тех, кто ищет уединение с природой.</p>
+<a class="text-error font-label-md text-label-md flex items-center gap-xs" href="../tours/">Экспедиции <span class="material-symbols-outlined">chevron_right</span></a>
+</div>
+</div>
+</div>
+</div>
+<!-- Region: Exotics -->
+<div class="mb-xl">
+<div class="flex items-end justify-between mb-lg">
+<div>
+<span class="text-error font-label-md text-label-md uppercase tracking-widest mb-xs block">Океанский бриз</span>
+<h2 class="font-headline-lg text-headline-lg">Экзотика</h2>
+</div>
+<div class="hidden md:block h-[2px] flex-grow mx-lg bg-surface-container-highest mb-3 opacity-30"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Bali -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl shadow-md mb-md">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A lush, green infinity pool in Bali overlooking tropical jungle valleys during sunrise. The lighting is soft and golden, creating a warm, energetic atmosphere. The scene is luxurious and peaceful, epitomizing a high-end exotic travel destination with glassmorphic depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZSF7TE04kEoYLcbweIswFtscj0DrhHfSSJyYAZZc5gEHMUKf46gGLQ8HlnTlide-h8F6Q6ug19aLiGWaQMpXzlysmcn0tY9hKgy9rLwgjoPPofZQ4SrM4dsxmBDKtGhggSe_XyW7L0dTRVxS0yJ3rg6sMOW5wF3lFpB4HfUt5KNbqwCfZOBmVdu2Kw2MMJj8ztB107Qh8IjYbt5evzRiYMFqev0P4YOEgeQP0Ze_GIu3mBu0_lgMkkeyERjkpD6eXl79TQ-pkcUDE"/>
+<div class="absolute top-md right-md">
+<span class="bg-error/90 backdrop-blur-sm text-white px-md py-xs rounded-full font-label-md text-label-md">от 120 000 ₽</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-xs">Бали</h3>
+<p class="text-on-surface-variant font-body-md text-body-md">Джунгли, серфинг и духовные практики в самом сердце Индонезии.</p>
+</div>
+<!-- Maldives -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl shadow-md mb-md">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Overwater bungalows in the Maldives above crystal clear turquoise lagoons. The water is so clear that the white sand bottom is visible. The sky is a perfect gradient of blue, creating a sense of extreme clarity and minimalist luxury. The lighting is bright and airy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAie8WvxsoTjy1SKvPRAUpzY2Abyv7t6yergZjqWq9I9_dAiIziMjb2wUolGX-Zfo_bdVsG6gK6zxTdAxPqIiJU2zHL414QtLmfgHxCcugEBQUl2fPq9LfZKdam1dCUPDqO4E49lSggtRLckRL7WqmoA8uxoO6pkJZoYSOE8q5JsG8nS_L6XWrv1Qfx8GUC5v2s4q_ldCtbXIcy0hXWHBSFIrpCTAypDTvCM13i2PllcGyohXp83uI_SokFbBL9DB-QzJiQ5umNfw0r"/>
+<div class="absolute top-md right-md">
+<span class="bg-error/90 backdrop-blur-sm text-white px-md py-xs rounded-full font-label-md text-label-md">от 250 000 ₽</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-xs">Мальдивы</h3>
+<p class="text-on-surface-variant font-body-md text-body-md">Абсолютный приватный отдых на уединенных островах-резортах.</p>
+</div>
+<!-- Seychelles (Bonus) -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl shadow-md mb-md">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Granite boulders on the white sand beaches of Seychelles, surrounded by turquoise ocean waves. The aesthetic is dramatic and natural, with high-quality textures of stone and water. The lighting is golden hour, adding a warm, sophisticated glow to the landscape." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX3BigTqOSOuHMxjyz2KTPE22lisxFITwzsLKfL3g5pUCOCBMSmsd48UT3cL0hO9M_ztWSJzp_zasazFO2f8NrsTOXSTJHRajnkUnjjtzpG5tuEaNlwppql7gYN1nsNUPPV6GdrUi2mP7mWD4IQTjlS8CuHSCzX5KBAL-6nto1QoJ3PKIPY2f9JoGhJ0oMdQiO0RkOK0KWBXFk-csusyhXwquNazGzpOc3nYC4itMaE7ktEgsgulqjW4aFPGbA0K-dPdTRJHsWBtoE"/>
+<div class="absolute top-md right-md">
+<span class="bg-error/90 backdrop-blur-sm text-white px-md py-xs rounded-full font-label-md text-label-md">от 180 000 ₽</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-xs">Сейшелы</h3>
+<p class="text-on-surface-variant font-body-md text-body-md">Гранитные скалы, гигантские черепахи и океан невероятного цвета.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Emotional Section: Why travel with us? -->
+<section class="bg-surface-container-low py-xl overflow-hidden">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+<div>
+<h2 class="font-display-lg-mobile md:font-headline-lg text-display-lg-mobile md:text-headline-lg mb-lg">Почему Вояж-Тур?</h2>
+<div class="space-y-lg">
+<div class="flex gap-md">
+<div class="w-12 h-12 rounded-full bg-error/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-error">verified_user</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md mb-xs">Надежность и опыт</h4>
+<p class="text-on-surface-variant font-body-md text-body-md">Более 15 лет на рынке. Мы знаем каждое направление изнутри и работаем только с проверенными партнерами.</p>
+</div>
+</div>
+<div class="flex gap-md">
+<div class="w-12 h-12 rounded-full bg-error/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-error">support_agent</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md mb-xs">Поддержка 24/7</h4>
+<p class="text-on-surface-variant font-body-md text-body-md">Ваш персональный менеджер всегда на связи. От момента выбора тура до возвращения домой.</p>
+</div>
+</div>
+<div class="flex gap-md">
+<div class="w-12 h-12 rounded-full bg-error/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-error">hotel_class</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md mb-xs">Эксклюзивные контракты</h4>
+<p class="text-on-surface-variant font-body-md text-body-md">Лучшие номера в топовых отелях по ценам, которые вы не найдете на агрегаторах.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square rounded-full border-2 border-dashed border-error/30 animate-[spin_20s_linear_infinite] absolute -inset-base"></div>
+<div class="relative rounded-2xl overflow-hidden aspect-square shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="A road trip scene with an open vintage vehicle driving through a vast desert landscape during sunset. The image evokes a sense of adventure, freedom, and professional travel photography. The colors are warm oranges and deep shadows, emphasizing the emotion of travel and discovery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNyhXME6PVxba54x0qmnmPukqao5yexJ1gQ3BSuS6aiGNwfDLVKeNtZdcrkXwqOw8MrED7bfnXjSW5FVHlVqkSJKw_meVi1cAbbBX8xnVQ-P9Q-QCSuNITpR3I3V3FNDynPvJ2rKNRUpGMEVH3pQXfSHxYr3MBGVRlGKbT-HtwGWrEvpXJ6ORDFtGlMSI2G4nUQsA9T5V3OSf_ufJWkdEroYcFmejTUZpRzyH2WesK-zepDPtVt1TiXAQlalF6GE09RpRQ8OaIgA0y"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-xl">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="bg-error rounded-3xl p-lg md:p-xl text-center text-on-primary shadow-2xl relative overflow-hidden group">
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent scale-150 group-hover:scale-100 transition-transform duration-1000"></div>
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-md relative z-10">Готовы к приключениям?</h2>
+<p class="font-body-lg text-body-lg mb-lg opacity-90 relative z-10 max-w-2xl mx-auto">Оставьте заявку, и мы подберем для вас идеальное направление, исходя из ваших желаний и бюджета.</p>
+<div class="flex flex-col md:flex-row gap-md justify-center items-center relative z-10">
+<input class="w-full md:w-72 px-md py-sm rounded-lg border-none text-on-surface focus:ring-2 focus:ring-white" placeholder="Ваш телефон" type="text"/>
+<button class="w-full md:w-auto bg-white text-error px-xl py-sm rounded-lg font-label-md text-label-md hover:scale-105 transition-transform shadow-lg">Подобрать тур</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-surface-container-lowest mt-xl">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-lg max-w-[1440px] mx-auto">
+<div class="md:col-span-1">
+<div class="font-headline-md text-headline-md text-error mb-md font-extrabold">Вояж-Тур</div>
+<p class="text-on-surface-variant font-caption text-caption mb-md opacity-80">Ваш надежный проводник в мире путешествий с 2008 года. Создаем воспоминания, которые остаются навсегда.</p>
+</div>
+<div>
+<h5 class="font-label-md text-label-md mb-md">Компания</h5>
+<ul class="space-y-sm">
+<li><a class="text-caption font-caption text-on-surface-variant hover:text-error transition-colors" href="../about/">О нас</a></li>
+<li><a class="text-caption font-caption text-on-surface-variant hover:text-error transition-colors" href="../contacts/">Контакты</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-md text-label-md mb-md">Помощь</h5>
+<ul class="space-y-sm">
+<li><a class="text-caption font-caption text-on-surface-variant hover:text-error transition-colors" href="../privacy/">Политика конфиденциальности</a></li>
+<li><a class="text-caption font-caption text-on-surface-variant hover:text-error transition-colors" href="../faq/">Часто задаваемые вопросы</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-md text-label-md mb-md">Связаться с нами</h5>
+<ul class="space-y-sm">
+<li><a class="text-caption font-caption text-on-surface-variant hover:text-error transition-colors" href="tel:88005553535">8 (800) 555-35-35</a></li>
+<li><a class="text-caption font-caption text-on-surface-variant hover:text-error transition-colors" href="mailto:info@voyage-tour.ru">info@voyage-tour.ru</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-outline-variant/10 px-margin-mobile md:px-margin-desktop py-md max-w-[1440px] mx-auto text-center">
+<p class="text-caption font-caption text-on-surface-variant opacity-60">© 2026 Вояж-Тур. Все права защищены.</p>
+</div>
+</footer>
+<script>
+        // Simple scroll animation for navigation background
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-base', 'shadow-md');
+                nav.classList.remove('py-md');
+            } else {
+                nav.classList.remove('py-base', 'shadow-md');
+                nav.classList.add('py-md');
+            }
+        });
+    </script>
+<script src="../assets/js/cursor-glow.js"></script>
+</body></html>
